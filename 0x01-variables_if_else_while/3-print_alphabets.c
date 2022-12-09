@@ -19,7 +19,7 @@ int main(void)
 	}
 	for (x = 'a'; x < 'z'; x++)
 	{
-		char big = upper(x);
+		char big = toupper(x);
 
 		putchar(big);
 	}
