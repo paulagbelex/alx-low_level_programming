@@ -11,13 +11,13 @@ int main(void)
 {
 	char x;
 
-	for (x = 'A'; x < 'Z'; x++)
+	for (x = 'A'; x <= 'Z'; x++)
 	{
 		char small = tolower(x);
 
 		putchar(small);
 	}
-	for (x = 'a'; x < 'z'; x++)
+	for (x = 'a'; x <= 'z'; x++)
 	{
 		char big = toupper(x);
 
