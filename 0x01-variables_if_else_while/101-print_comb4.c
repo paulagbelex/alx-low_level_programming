@@ -11,11 +11,10 @@ int main(void)
 	while (d1 <= 9)
 	{
 		putchar(d1 + '0');
-		putchar(',');
-		putchar(' ');
 		putchar(d2 + '0');
 		putchar(d3 + '0');
-		putchar('\n');
+		putchar(',');
+		putchar(' ');
 		d1++;
 
 		if (d1 == d2)
@@ -23,6 +22,7 @@ int main(void)
 		if (d1 == d3 || d2 == d3)
 			d3++;
 	}
+	putchar('\n');
 	return (0);
 }
 
