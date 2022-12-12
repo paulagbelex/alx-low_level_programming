@@ -13,7 +13,7 @@ int main(void)
 	{
 		for (ones = '0'; ones <= '9'; ones++)
 		{
-			if (!((ones == tens) || (ones > tens)))
+			if (!((ones == tens) || (tens > ones)))
 			{
 				putchar(tens);
 				putchar(ones);
@@ -24,7 +24,7 @@ int main(void)
 				}
 			}
 		}
-	}	
+	}
 	putchar('\n');
 	return (0);
 }
