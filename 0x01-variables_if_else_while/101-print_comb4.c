@@ -1,28 +1,39 @@
 #include <stdio.h>
+
 /**
- * main - entry point
+ * main - prints all possible different combinations of three digits.
  *
- * Return: always 0
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int d1 = 0, d2 = 1, d3 = 2;
+	int ones = '0';
+	int tens = '0';
+	int hunds = '0';
 
-	while (d1 <= 9)
+	for (hunds = '0'; hunds <= '9'; hunds++)
 	{
-		putchar(d1 + '0');
-		putchar(d2 + '0');
-		putchar(d3 + '0');
-		putchar(',');
-		putchar(' ');
-		d1++;
-
-		if (d1 == d2)
-			d2++;
-		if (d1 == d3 || d2 == d3)
-			d3++;
+		for (tens = '0'; tens <= '9'; tens++)
+		{
+			for (ones = '0'; ones <= '9'; ones++)
+			{
+				if (!((ones == tens) || (tens == hunds) ||
+							(tens > ones) ||
+							(hunds > tens)))
+				{
+					putchar(hunds);
+					putchar(tens);
+					putchar(ones);
+					if (!(ones == '9' && hunds == '7' && tens == '8'))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+			}
+		}
 	}
 	putchar('\n');
 	return (0);
 }
-
