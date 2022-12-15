@@ -17,19 +17,16 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i == 100)
+		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("%s", b);
-		} else if ((i % 3 == 0) && (i % 5 == 0))
-		{
-			printf("%s ", fb);
+			printf("FizzBuzz");
 		} else if (i % 3 == 0)
 		{
-			printf("%s ", f);
+			printf("Fizz");
 		} else if (i % 5 == 0)
 		{
-			printf("%s ", b);
-		}
+			printf("Buzz");
+	       	{
 		printf("%d ", i);
 	}
 	printf("\n");
