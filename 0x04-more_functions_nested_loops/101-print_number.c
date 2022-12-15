@@ -27,12 +27,9 @@ void print_number(int n)
 	while (c)
 	{
 		if (num / (m * 10) > 0)
-		{
 			m *= 10;
-		} else
-		{
+		else
 			c = 0;
-		}
 	}
 
 	while (num >= 0)
