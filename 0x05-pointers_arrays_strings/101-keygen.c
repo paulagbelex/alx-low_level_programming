@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/**
- * main - entry point
- *
- * Return: Always 0
- */
 
-#define PASSWORD_LENGTH 8
+#define MIN_PASS_LENGTH 8
+#define MAX_PASS_LENGTH 16
 
 int main(void)
 {
 	srand(time(NULL));
 
-	char password[PASSWORD_LENGTH + 1];
+	int pass_length = MIN_PASS_LENGTH + (rand() % (MAX_PASS_LENGTH - MIN_PASS_LENGTH + 1));
+	char password[pass_length + 1];
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	int i = 0;
+	while (i < pass_length)
 	{
-		int r = rand() % 94 + 33;
-
-		password[i] = (char)r;
+		char c = (rand() % 94) + 33;
+		if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '!' || c == '@' || c == '#' || c == '$' || c == '%' || c == '^' || c == '&' || c == '*' || c == '(' || c == ')' || c == '-' || c == '_' || c == '+' || c == '=' || c == '{' || c == '}' || c == '[' || c == ']' || c == '|' || c == '\' || c == ':' || c == ';' || c == '"' || c == '<' || c == '>' || c == '?' || c == ',' || c == '.' || c == '/' || c == '~')
+		{
+			password[i] = c;
+			i++;
+		}
 	}
-	password[PASSWORD_LENGTH] = '\0';
+	password[pass_length] = '\0';
 	printf("Generated password: %s\n", password);
-
-	return (0);
+	return 0;
 }
