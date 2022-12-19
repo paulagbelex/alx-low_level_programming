@@ -2,6 +2,8 @@
 #include "main.h"
 /**
  * puts_half - entry point to print half the data
+ *
+ * @str: holds the value...
  */
 void puts_half(char *str)
 {
