@@ -8,37 +8,32 @@
  */
 int _atoi(char *s)
 {
-	int number = 0;
-	int minus = 0;
-	int i = 0;
+	unsigned int count = 0, size = 0, j = 0, k = 1, m = 1, i;
 
-	while (*(s + i) != '\0')
+	while (*(s + count) != '\0')
 	{
-		if (*(s + i) == '-')
-		{
-			minus++;
-		}
-		if (*(s + i) >= '0' && *(s + i) <= '9')
-		{
-			if (number > 0)
-			{
-				number = number * 10 + (*(s + i) - '0');
-			}
-				number = *(s + i) - '0';
-		}
-		if (number != 0 && (*(s + i) < '0' || *(s + i) > '9'))
+		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
 		{
 			break;
 		}
-		i++;
+		if (*(s + count) == '-')
+		{
+			k *= -1;
+		}
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
+		{
+			if (size > 0)
+			{
+				m *= 10;
+			}
+			size++;
+		}
+		count++;
 	}
-	if (number == 0)
+	for (i = count - size; i < count; i++)
 	{
-		return (0);
+		j = j + ((*(s + i) - 48) * m);
+		m /= 10;
 	}
-	if (minus % 2 == 0)
-	{
-		return (number);
-	}
-	return (number * (-1));
+	return (j * k);
 }
