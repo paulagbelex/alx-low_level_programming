@@ -1,1 +1,1 @@
-All about static libraries
+Static libraries
