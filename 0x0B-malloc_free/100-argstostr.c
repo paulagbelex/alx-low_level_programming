@@ -7,7 +7,6 @@
  *
  * Return: a pointer to a new string, or NULL if it fails
  */
-
 char *argstostr(int ac, char **av)
 {
 	char *str, *s;
@@ -18,7 +17,6 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-
 	for (i = 0; i < ac; i++)
 	{
 		s = av[i];
@@ -31,7 +29,6 @@ char *argstostr(int ac, char **av)
 		len++;
 	}
 	str = (char *)malloc(sizeof(char) * (len + 1));
-
 	if (str == NULL)
 	{
 		return (NULL);
@@ -40,7 +37,6 @@ char *argstostr(int ac, char **av)
 	{
 		s = av[i];
 		k = 0;
-
 		while (s[k])
 		{
 			str[j] = s[k];
